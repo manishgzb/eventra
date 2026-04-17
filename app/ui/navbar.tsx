@@ -5,42 +5,55 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 const Navbar = () => {
   return (
-    <nav className="md:pt-2 md:pb-2 md:pr-6 md:pl-6 p-4 flex justify-between items-center border">
-      <h1 className="md:text-2xl text-3xl text-primary">Eventra</h1>
-      <div className="hidden sm:flex justify-between">
-        <Link href="/events">
-          <Button variant="link">Browse Events</Button>
-        </Link>
-        <Link href='/help'>
-          <Button variant='link'>Help</Button>
-        </Link>
-        <Link href='signin'>
-          <Button>Sign In</Button>
-        </Link>
-      </div>
-      <div className="md:hidden">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Image src='/hamburger.png' height={40} width={40} alt="hamburger menu" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuGroup>
-              <DropdownMenuItem><Link href='events'>Browse Events</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href='events'>Help</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href='events'><Button variant='default' size='lg'>Sign in</Button></Link></DropdownMenuItem>
-            </DropdownMenuGroup>
-          </DropdownMenuContent>
-        </DropdownMenu>
+    <nav className="bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-primary">Eventra</h1>
+        <div className="flex items-center justify-between h-16">
+          <div className="hidden sm:flex justify-between">
+            <Link href="/events">
+              <Button variant="link">Browse Events</Button>
+            </Link>
+            <Link href='/help'>
+              <Button variant='link'>Help</Button>
+            </Link>
+            <Link href='signin'>
+              <Button>Sign In</Button>
+            </Link>
+          </div>
+        </div>
+        <div className="sm:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Image src="/hamburger.png" height={24} width={24} alt="hamburger menu" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuGroup>
+                <DropdownMenuItem>
+                  <Link href="/events">Browse Events</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/help">Help</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/signin">
+                    <Button>Sign In</Button>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </nav>
+
   )
 }
 export default Navbar
