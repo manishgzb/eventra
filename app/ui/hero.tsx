@@ -9,7 +9,7 @@ const Hero = () => {
     return (
         <div className="relative h-screen">
             <Image
-                src="/pexels-jibarofoto-18482996.jpg"
+                src="/pexels-michael-brennan-173741263-14591832.jpg"
                 alt="Hero background"
                 layout="fill"
                 objectFit="cover"
